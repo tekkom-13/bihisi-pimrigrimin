@@ -1,64 +1,26 @@
-from sly import lex
-#import dari library sly
+from sly import Lexer
 
-tokens = [
-    'PLUS',         #+
-    'MINUS',        #-     
-    'MULTIPLY',     #*
-    'DIVIDE',       #/
-    'MODULO',       #%
+class iniLexer(Lexer):
+    # Mengatur nama token.
+    tokens = { ID, NUMBER, PLUS, MINUS, TIMES,
+               DIVIDE, ASSIGN, LPAREN, RPAREN }
 
-    'EQUALS',       #=
+    # String berisi karakter yang diabaikan di antara token
+    ignore = ' \t'
 
-    'LPAREN',       #(
-    'RPAREN',       #)
-    "LBRACE",       #[
-    "RBRACE",       #]
-    'BLOCKSTART',   #{
-    'BLOCKEND',     #}
-
-    'INTEGER',
-    'FLOAT',
-
-    'COMMENT',      #--    
-]
-
-#mendefinisikan token
-t_PLUS    = r'\+'
-t_MINUS   = r'-'
-t_MULTIPLY   = r'\*'
-t_DIVIDE  = r'/'
-t_MODULO = r'%'
-t_LPAREN  = r'\('
-t_RPAREN  = r'\)'
-t_LBRACE = r'\['
-t_RBRACE = r'\]'
-t_BLOCKSTART = r'\{'
-t_BLOCKEND = r'\}'
-t_EQUALS = r'\='
-t_COMMENT = r'\#.*'            
-t_ignore  = ' \t' #mengabaikan tab dan spasi
-
-#peran untuk int dan float
-
-def t_INTEGER(t):
-    r'\d+'
-    t.value = int(t.value)
-    return t
-
-def t_FLOAT(t):
-    r'(\d*\.\d+)|(\d+\.\d*)'
-    t.value = float(t.value)
-    return t
-
-def t_newline(t):
-    r'\n+'
-    t.lexer.lineno += len(t.value)
-
-def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
-    t.lexer.skip(1)
+    # Aturan ekspresi reguler untuk token
+    ID      = r'[a-zA-Z_][a-zA-Z0-9_]*'
+    NUMBER  = r'\d+'
+    PLUS    = r'\+'
+    MINUS   = r'-'
+    TIMES   = r'\*'
+    DIVIDE  = r'/'
+    ASSIGN  = r'='
+    LPAREN  = r'\('
+    RPAREN  = r'\)'
 
 if __name__ == '__main__':
-    lexer = lex.lex()
-    
+    data = 'x = 3 + 42 * (s - t)'
+    lexer = iniLexer()
+    for tok in lexer.tokenize(data):
+        print('type=%r, value=%r' % (tok.type, tok.value))
