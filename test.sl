@@ -1,0 +1,1 @@
+CETAK "Hello"
