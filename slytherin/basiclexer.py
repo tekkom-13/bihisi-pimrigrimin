@@ -2,7 +2,7 @@ from sly import Lexer
 
 class BasicLexer(Lexer):
 	tokens = {NAME, NUMBER, STRING, IF, THEN, ELSE, FOR, FUN, TO, ARROW, EQEQ, PRINT}
-	ignore = '\t'
+	ignore = '\t '
 
 	literals = {'=', '+', '-', '/', '*', '(', ')', ',', ';'}
 
@@ -11,7 +11,7 @@ class BasicLexer(Lexer):
 	THEN = r'LALU'
 	ELSE = r'SEDANGKAN'
 	FOR = r'UNTUK'
-	FUN = r'PUNGSI'
+	FUN = r'FUNGSI'
 	TO = r'KE'
 	PRINT = r'CETAK'
 	ARROW = r'->'
