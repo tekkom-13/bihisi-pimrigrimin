@@ -1,5 +1,5 @@
 from sly import Parser
-from slytherin.basiclexer import BasicLexer
+from bihisi.lixir import BasicLexer
 
 class BasicParser(Parser):
     tokens = BasicLexer.tokens
