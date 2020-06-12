@@ -1,6 +1,6 @@
-from slytherin.basiclexer import BasicLexer
-from slytherin.basicparser import BasicParser
-from slytherin.basicinterpreter import BasicExecute
+from bihisi.lixir import BasicLexer
+from bihisi.pirsir import BasicParser
+from bihisi.intirpritir import BasicExecute
 from sys import *
 
 def open_file(filename):
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     else:
         while True:
             try:
-                text = input('slytherin » ')
+                text = input('bihisi pimrigrimin » ')
             except EOFError:
                 break
             if text:

@@ -1,0 +1,25 @@
+CITIK "COBA"
+
+b=2
+a=8
+
+a+b
+
+a-b
+
+a*b
+
+a/b
+
+
+INTIK c=0 KI a LILI CITIK c
+
+CITIK "aww"
+JIKI a==8 LILI CITIK a SILIIN_ITI CITIK a+1
+
+FINGSI anu() -> JIKI a==6 LILI CITIK a SILIIN_ITI CITIK a+1
+
+anu()
+
+CITIK "a"
+CITIK "dah lah"
