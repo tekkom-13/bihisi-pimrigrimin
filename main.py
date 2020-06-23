@@ -11,7 +11,7 @@ def open_file(filename):
         print("Bukan file bihisi, pastikan ekstensi .bip")
         exit()
 
-def run()
+def run():
     lexer = BasicLexer()
     parser = BasicParser()
     #interpreter = basicinterpreter
