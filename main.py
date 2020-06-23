@@ -4,7 +4,7 @@ from bihisi.intirpritir import BasicExecute
 from sys import *
 
 def open_file(filename):
-    if (".bip" in filename):
+    if (filename.endswith('.bip')):
         data = open(argv[1])
         return data
     else:
