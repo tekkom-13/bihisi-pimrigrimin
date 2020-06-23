@@ -4,16 +4,20 @@ from bihisi.intirpritir import BasicExecute
 from sys import *
 
 def open_file(filename):
-    data = open(filename, "r").read()
-    return data
+    if (".bip" in filename):
+        data = open(argv[1])
+        return data
+    else:
+        print("Bukan file bihisi, pastikan ekstensi .bip")
+        exit()
 
-if __name__ == '__main__':
+def run()
     lexer = BasicLexer()
     parser = BasicParser()
     #interpreter = basicinterpreter
     env = {}
     if len(argv) > 1:
-        data = open(argv[1])
+        data = open_file(argv[1])
         text = data.readlines()
         for line in text:
             #lex = lexer.tokenize(line)
@@ -28,3 +32,4 @@ if __name__ == '__main__':
             if text:
                 tree = parser.parse(lexer.tokenize(text))
                 BasicExecute(tree, env)
+run()
